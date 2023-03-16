@@ -1,12 +1,12 @@
 Feature: US1001 Kullanici Amazon sayfasinda arama yapar
-
+@ilk
   Scenario: TC01 Kullanici Amazonda Nutella aratir
 
     Given kullanici amazon anasayfaya gider
     Then arama kutusuna Nutella yazar ve enter tusuna basar
     And arama sonuclarinin Nutella icerdigini test eder
     And sayfayi kapatir
-
+@ilk
 Scenario: TC02 Kullanici Amazonda Java aratir
 
   Given  kullanici amazon anasayfaya gider

@@ -9,12 +9,13 @@ import org.openqa.selenium.Keys;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class AmazonstepDefinitions {
     AmazonPage amazonPage=new AmazonPage();
 
     @Given("kullanici amazon anasayfaya gider")
-    public void kullanici_amazon_anasayfaya_gider() {
+    public void kullanici_Amazon_anasayfaya_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
     }
     @Then("arama kutusuna Nutella yazar ve enter tusuna basar")
@@ -55,5 +56,44 @@ public class AmazonstepDefinitions {
         String expectedIcerik="Apple";
         String actualaramaSonucYazisi=amazonPage.aramaSonucElementi.getText();
         Assert.assertTrue(actualaramaSonucYazisi.contains(expectedIcerik));
+    }
+
+    @Then("amazonda {string} icin arama yapar")
+    public void amazondaIcinAramaYapar(String arananKelime) {
+        amazonPage.aramaKutusu.sendKeys(arananKelime +Keys.ENTER);
+
+    }
+
+    @And("sonuclarin {string} icerdigini test edin")
+    public void sonuclarinIcerdiginiTestEdin(String arananKelime) {
+       String actualAramaSonucYazisi=amazonPage.aramaSonucElementi.getText();
+       Assert.assertTrue(actualAramaSonucYazisi.contains(arananKelime));
+    }
+
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int istenenSaniye) {
+        ReusableMethods.bekle(istenenSaniye);
+    }
+    @Given("kullanici {string} anasayfaya gider")
+    public void kullanici_anasayfaya_gider(String istenenUrl) {
+    Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+    }
+    @Then("{string} sayfasina gittigini test eder")
+    public void sayfasina_gittigini_test_eder(String istenenUrl) {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        String expectedUrl=ConfigReader.getProperty(istenenUrl) + "/";
+        Assert.assertEquals(expectedUrl,actualUrl);
+    }
+
+    @And("{int}.urune gider")
+    public void uruneGider(int istenenIndex) {
+        amazonPage.istenenUrunElementi(istenenIndex).click();
+
+    }
+
+    @Then("urun isminin {string} icerdigini test eder")
+    public void urunIsmininIcerdiginiTestEder(String arananKelime) {
+        String actualUrunIsmi=amazonPage.ilkUrunIsimElementi.getText();
+        Assert.assertTrue(actualUrunIsmi.contains(arananKelime));
     }
 }
