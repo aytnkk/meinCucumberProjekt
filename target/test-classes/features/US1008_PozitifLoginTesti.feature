@@ -1,5 +1,4 @@
 Feature: US1008 gecerli kullanici adi ve sifre ile sisteme giris
-
   Scenario: TC12 Gecerli username ve password ile basarili giris yapilabilmeli
 
     Given  kullanici "qdUrl" anasayfaya gider

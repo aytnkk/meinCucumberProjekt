@@ -34,33 +34,33 @@ public class Driver {
 
         if (driver==null) {
 
-            switch (istenenBrowser){
+            switch (istenenBrowser) {
 
-                case "firefox" :
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver= new FirefoxDriver();
+                    driver = new FirefoxDriver();
                     break;
                 case "edge":
                     WebDriverManager.edgedriver().setup();
-                    driver= new EdgeDriver();
+                    driver = new EdgeDriver();
                     break;
-                case "safari" :
+                case "safari":
                     WebDriverManager.safaridriver().setup();
-                    driver= new SafariDriver();
+                    driver = new SafariDriver();
                     break;
                 default:
                     WebDriverManager.chromedriver().setup();
-                    ChromeOptions options=new ChromeOptions();
+                    ChromeOptions options = new ChromeOptions();
                     options.addArguments("--remote-allow-origins=*");
                     driver = new ChromeDriver(options);
                     break;
 
             }
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
 
         }
-
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 
         return driver;
