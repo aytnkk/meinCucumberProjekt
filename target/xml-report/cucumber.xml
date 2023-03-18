@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="44.342" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="US1001 Kullanici Amazon sayfasinda arama yapar" name="TC01 Kullanici Amazonda Nutella aratir" time="19.684">
+<testsuite name="Cucumber" time="12.983" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="US1009 Herokuapp omplicitly wait" name="TC13 kullanici &quot;herokuUrl&quot; anasayfaya gider" time="11.863">
+<failure type="java.lang.NullPointerException" message="null value in entry: url=null">
+<![CDATA[java.lang.NullPointerException: null value in entry: url=null
+	at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:33)
+	at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:43)
+	at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:81)
+	at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:128)
+	at org.openqa.selenium.remote.DriverCommand.GET(DriverCommand.java:191)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at stepdefinitions.AmazonstepDefinitions.kullanici_anasayfaya_gider(AmazonstepDefinitions.java:79)
+	at ✽.kullanici "herokuUrl" anasayfaya gider(file:///C:/Users/Ayten/IdeaProjects/Cucumber_meinProject/src/test/resources/features/US1009_HerokuDelete.feature:5)
+]]>
+</failure>
 <system-out><![CDATA[
-Given kullanici amazon anasayfaya gider.....................................passed
-Then arama kutusuna Nutella yazar ve enter tusuna basar.....................passed
-And arama sonuclarinin Nutella icerdigini test eder.........................passed
-And sayfayi kapatir.........................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US1001 Kullanici Amazon sayfasinda arama yapar" name="TC02 Kullanici Amazonda Java aratir" time="15.686">
-<system-out><![CDATA[
-Given kullanici amazon anasayfaya gider.....................................passed
-When arama kutusuna Java yazar ve enter tusuna basar........................passed
-Then arama sonuclarinin Java icerdigini test eder...........................passed
-And sayfayi kapatir.........................................................passed
-]]></system-out>
-</testcase>
-<testcase classname="US1004 kullanci parametre olarak girdigi Url'ye gider" name="TC08 Kullanici url'i parametre olarak girebilmeli" time="8.204">
-<system-out><![CDATA[
-Given kullanici "amazonUrl" anasayfaya gider................................passed
-Then "amazonUrl" sayfasina gittigini test eder..............................passed
-And sayfayi kapatir.........................................................passed
+Given kullanici "herokuUrl" anasayfaya gider................................failed
+Then AddElement butonuna basar..............................................skipped
+And Delete butonu gorunur oluncaya kadar bekler.............................skipped
+Then Delete butonunun gorunur oldugunu test eder............................skipped
+Then Delete butonuna basarak butonu siler...................................skipped
+Then Delete butonunun gorunmedigini test eder...............................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -13,7 +13,7 @@ Scenario: TC02 Kullanici Amazonda Java aratir
   When arama kutusuna Java yazar ve enter tusuna basar
   Then arama sonuclarinin Java icerdigini test eder
   And  sayfayi kapatir
-
+@ilk
   Scenario: TC03 Kullanici Amazonda Apple aratir
 
     Given  kullanici amazon anasayfaya gider

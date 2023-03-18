@@ -64,8 +64,8 @@ public class AmazonstepDefinitions {
 
     }
 
-    @And("sonuclarin {string} icerdigini test edin")
-    public void sonuclarinIcerdiginiTestEdin(String arananKelime) {
+    @And("sonuclarin {string} icerdigini test eder")
+    public void sonuclarinIcerdiginiTestEder(String arananKelime) {
        String actualAramaSonucYazisi=amazonPage.aramaSonucElementi.getText();
        Assert.assertTrue(actualAramaSonucYazisi.contains(arananKelime));
     }
