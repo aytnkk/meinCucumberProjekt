@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DemoqaPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.time.Duration;
 
@@ -42,7 +44,10 @@ public class DemoqaStepdefinitions {
     public void ok_diyerek_alerti_kapatir() {
         Driver.getDriver().switchTo().alert().accept();
     }
-
+    @And("{int} saniye bekler")
+    public void saniyeBekler(int istenenSaniye) {
+        ReusableMethods.bekle(istenenSaniye);
+    }
 
 
 

@@ -1,3 +1,4 @@
+@Regression
 Feature: US1003 Kullanici amazonda parametre olarak yazdigi kelimeyi aratir
 
   Scenario: TC07 Kullanici parametre ile arama yaptirabilmeli

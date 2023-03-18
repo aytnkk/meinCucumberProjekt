@@ -1,3 +1,5 @@
+
+@Regression @pr1
 Feature: US1002 Kullanici Backround kullarak Amazon sayfasinda arama yapar
 
   Background:// her senario da kullanilan ortak yazisi burda ortak hale getirdi
