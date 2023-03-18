@@ -1,5 +1,5 @@
 Feature: Google Arama Testi
-@nevzat
+@regression
   Background: ORTAK ADIMLAR
     Given Kullanici google sayfasina gider
     Then  Cokkies i google sayfasinda kabul eder
@@ -15,7 +15,7 @@ Feature: Google Arama Testi
     Then  Para birimlerinin karsilastirmasini alir
     Then  Verilen degerlerin 2 den kucuk oldugunu dogrular
     Then  Kullanici sayfayi kapatir
-  @nevzat
+  @ilk
   Scenario: Nevzat istenilen karsilastirmayi yapsin
 
     Then  Arama Kutusuna karsilastirma yapmak istedigi "Zloty to Tl" para birimlerini girer

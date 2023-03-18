@@ -12,7 +12,7 @@ Feature: US001 TEST
   Scenario: Kullanici ilgili sayfaya gider
 
     Given Kullanici Amazon sayfasina gider
-  @nevzat
+  @ilk
 
   Scenario:
     Given Kullanici qualityDemy sayfasina gider

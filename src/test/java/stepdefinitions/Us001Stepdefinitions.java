@@ -5,20 +5,17 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.Us001Page;
-import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.security.Key;
-
-public class US001StepDefinitions {
+public class Us001Stepdefinitions {
     String equalsPara;
     Us001Page page=new Us001Page();
     @Given("Kullanici google sayfasina gider")
-    public void kullanici_google_sayfasina() {
+    public void kullanici_google_sayfasina_gider() {
         Driver.getDriver().get("https://www.google.com");
     }
     @Then("Cokkies i google sayfasinda kabul eder")
-    public void cokkies_i_kabul() {
+    public void cokkies_i_kabul_eder() {
     page.cokkies.click();
     }
     @Given("Kullanici Amazon sayfasina gider")
